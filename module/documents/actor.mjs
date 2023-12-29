@@ -37,6 +37,7 @@ export class BoilerplateActor extends Actor {
     // things organized.
     this._prepareCharacterData(actorData);
     this._prepareNpcData(actorData);
+    this._prepareGroupData(actorData);
   }
 
   /**
@@ -49,10 +50,10 @@ export class BoilerplateActor extends Actor {
     const systemData = actorData.system;
 
     // Loop through ability scores, and add their modifiers to our sheet output.
-    for (let [key, ability] of Object.entries(systemData.abilities)) {
+    /*for (let [key, ability] of Object.entries(systemData.abilities)) {
       // Calculate the modifier using d20 rules.
       ability.mod = Math.floor((ability.value - 10) / 2);
-    }
+    }*/
   }
 
   /**
@@ -64,6 +65,13 @@ export class BoilerplateActor extends Actor {
     // Make modifications to data here. For example:
     const systemData = actorData.system;
     systemData.xp = (systemData.cr * systemData.cr) * 100;
+  }
+
+  _prepareGroupData(actorData) {
+    if (actorData.type !== 'group') return;
+
+    // Make modifications to data here. For example:
+    const systemData = actorData.system;
   }
 
   /**

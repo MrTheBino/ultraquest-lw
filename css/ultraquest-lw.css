@@ -284,6 +284,7 @@
 .ultraquest-lw .sheet-body .tab,
 .ultraquest-lw .sheet-body .tab .editor {
   height: 100%;
+  min-height: 150px;
 }
 .ultraquest-lw .tox .tox-editor-container {
   background: #fff;
@@ -437,4 +438,12 @@
   padding: 4px;
   margin-bottom: 8px;
   min-height: 100px;
+}
+
+.ultraquest-lw .editor_box {
+  border: 2px solid #960670;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 8px;
+  min-height: 200px;
 }

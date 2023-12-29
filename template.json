@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "npc"],
+    "types": ["character", "npc","group"],
     "templates": {
       "base": {
         "health": {
@@ -34,13 +34,16 @@
         "movement": {
           "value": 0
         },
-        "stength": {
+        "strength": {
           "value": 0
         },
         "agillity": {
-          "value": 10
+          "value": 0
         },
-        "honor": {
+        "intelligence": {
+          "value": 0
+        },
+        "money": {
           "value": 0
         },
         "job": {
@@ -48,12 +51,37 @@
         },
         "abilities_description":"1.<br>2.<br>3.<br>",
         "gear": "1.<br>2.<br>3.<br>",
-        "heimisch":""
+        "heimisch":"",
+        "zustand": "",
+        "verletzt":{
+          "value": 0
+        }
       }
     },
     "npc": {
       "templates": ["base"],
       "cr": 0
+    },
+    "group": {
+      "templates": ["base"],
+      "attributes": {
+        "nk": {
+          "value": ""
+        },
+        "fk": {
+          "value": ""
+        },
+        "nk_fk": {
+          "value": ""
+        },
+        "ehre": {
+          "value": 0
+        },
+        "ruhm": {
+          "value": 0
+        },
+        "overview": "<strong>Abenteurer:</strong><br><strong>Questen und Aufträge:</strong><br>"
+      }
     }
   },
   "Item": {

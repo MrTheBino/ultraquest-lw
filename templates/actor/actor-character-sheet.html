@@ -64,13 +64,57 @@
   {{!-- Sheet Body --}}
   <section class="sheet-body">
     <fieldset class="ultraquest-lw styled_box">
+      <legend>Attribute, Zustände,etc.</legend>
+      <div class="resources grid grid-4col">
+        <div class="resource flex-group-center">
+          <label for="system.attributes.movement.value" class="resource-label">Bewegung</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.movement.value" value="{{system.attributes.movement.value}}" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.strength.value" class="resource-label">Stärke</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.strength.value" value="{{system.attributes.strength.value}}" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.agillity.value" class="resource-label">Geschick</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.agillity.value" value="{{system.attributes.agillity.value}}" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.intelligence.value" class="resource-label">Intelligenz</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.intelligence.value" value="{{system.attributes.intelligence.value}}" />
+          </div>
+        </div>
+      </div>
+
+      <div class="resources grid grid-2col">
+        <div class="resource flex-group-center">
+          <label for="system.attributes.zustand" class="resource-label">Zustand</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.zustand" value="{{system.attributes.zustand}}" />
+          </div>
+        </div>
+        <div class="resource flex-group-center">
+          <label for="system.attributes.money.value" class="resource-label">Gold</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.attributes.money.value" value="{{system.attributes.money.value}}" />
+          </div>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="ultraquest-lw editor_box">
       <legend>Fertigkeiten</legend>
-      {{editor system.attributes.abilities_description target="system.attrbiutes.abilities_description" rollData=rollData button=true owner=owner editable=editable}}
+      {{editor system.attributes.abilities_description target="system.attributes.abilities_description" rollData=rollData button=true owner=owner editable=editable}}
     </fieldset>
 
-    <fieldset class="ultraquest-lw styled_box">
+    <fieldset class="ultraquest-lw editor_box">
       <legend>griffbereite Ausrüstung</legend>
-      {{editor system.attributes.gear target="system.attrbiutes.gear" rollData=rollData button=true owner=owner editable=editable}}
+      {{editor system.attributes.gear target="system.attributes.gear" rollData=rollData button=true owner=owner editable=editable}}
     </fieldset>
 
 

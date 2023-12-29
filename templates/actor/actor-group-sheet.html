@@ -1,0 +1,71 @@
+<form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <header class="sheet-header">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+        <div class="header-fields">
+            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+            {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
+            use both the "grid" and "grid-Ncol" class where "N" can be any number
+            from 1 to 12 and will create that number of columns. --}}
+            <div class="resources grid grid-2col">
+
+                {{!-- "flex-group-center" is also defined in the _grid.scss file
+                and it will add a small amount of padding, a border, and will
+                center all of its child elements content and text. --}}
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.ehre.value" class="resource-label">Ehre</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.attributes.ehre.value" value="{{system.attributes.ehre.value}}"
+                            data-dtype="Number" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.ruhm.value" class="resource-label">Ruhm</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.attributes.rum.value" value="{{system.attributes.rum.value}}"
+                            data-dtype="Number" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="resources grid grid-3col">
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.nk.value" class="resource-label">NK</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.attributes.nk.value" value="{{system.attributes.nk.value}}"
+                            placeholder="10 +(1)" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.fk.value" class="resource-label">FK</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.attributes.fk.value" value="{{system.attributes.fk.value}}"
+                            placeholder="10 +(1)" />
+                    </div>
+                </div>
+
+                <div class="resource flex-group-center">
+                    <label for="system.attributes.nk_fk.value" class="resource-label">NK+FK</label>
+                    <div class="resource-content flexrow flex-center flex-between">
+                        <input type="text" name="system.attributes.nk_fk.value"
+                            value="{{system.attributes.nk_fk.value}}" placeholder="10 +(1)" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+        <fieldset class="ultraquest-lw editor_box">
+            <legend>Abenteurer, Questen & Aufträge</legend>
+            {{editor system.attributes.overview target="system.attributes.overview" rollData=rollData button=true owner=owner editable=editable}}
+        </fieldset>
+
+
+    </section>
+</form>

@@ -50,6 +50,10 @@ export class BoilerplateActorSheet extends ActorSheet {
       this._prepareItems(context);
     }
 
+    if (actorData.type == 'group') {
+      this._prepareItems(context);
+    }
+
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();
 
