@@ -42,7 +42,7 @@
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.ranged_attack.value" class="resource-label">RK</label>
+          <label for="system.attributes.ranged_attack.value" class="resource-label">FK</label>
           <div class="resource-content flexrow flex-center flex-between">
             <input type="text" name="system.attributes.ranged_attack.value"
               value="{{system.attributes.ranged_attack.value}}" data-dtype="Number" />
@@ -63,8 +63,21 @@
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
-    <fieldset class="ultraquest-lw styled_box">
-      <legend>Attribute, Zustände,etc.</legend>
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+      {{!-- Default tab is specified in actor-sheet.mjs --}}
+      <a class="item" data-tab="attributes_tab"
+        >Attribute, Zustände,etc.</a
+      >
+      <a class="item" data-tab="fertigkeiten_tab"
+        >Fertigkeiten</a
+      >
+      <a class="item" data-tab="gear_tab"
+        >Ausrüstung</a
+      >
+    </nav>
+
+    <div class="tab features" data-group="primary" data-tab="attributes_tab">
       <div class="resources grid grid-4col">
         <div class="resource flex-group-center">
           <label for="system.attributes.movement.value" class="resource-label">Bewegung</label>
@@ -106,16 +119,16 @@
           </div>
         </div>
       </div>
-    </fieldset>
-    <fieldset class="ultraquest-lw editor_box">
-      <legend>Fertigkeiten</legend>
-      {{editor system.attributes.abilities_description target="system.attributes.abilities_description" rollData=rollData button=true owner=owner editable=editable}}
-    </fieldset>
+    </div>
+    
 
-    <fieldset class="ultraquest-lw editor_box">
-      <legend>griffbereite Ausrüstung</legend>
+    <div class="tab features" data-group="primary" data-tab="fertigkeiten_tab">
+      {{editor system.attributes.abilities_description target="system.attributes.abilities_description" rollData=rollData button=true owner=owner editable=editable}}
+    </div>
+
+    <div class="tab features" data-group="primary" data-tab="gear_tab">
       {{editor system.attributes.gear target="system.attributes.gear" rollData=rollData button=true owner=owner editable=editable}}
-    </fieldset>
+    </div>
 
 
   </section>

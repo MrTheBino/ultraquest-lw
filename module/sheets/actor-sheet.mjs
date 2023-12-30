@@ -58,7 +58,7 @@ export class BoilerplateActorSheet extends ActorSheet {
     context.rollData = context.actor.getRollData();
 
     // Prepare active effects
-    context.effects = prepareActiveEffectCategories(this.actor.effects);
+    //context.effects = prepareActiveEffectCategories(this.actor.effects);
 
     return context;
   }
@@ -131,6 +131,20 @@ export class BoilerplateActorSheet extends ActorSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
+
+    html.find('#add_ehre_button').click(ev => {
+      this.actor.system.attributes.ehre.value = parseInt(this.actor.system.attributes.ehre.value) + 1;
+      this.actor.system.attributes.ruhm.value = parseInt(this.actor.system.attributes.ruhm.value) + 1;
+      this.render(true);
+    });
+
+    html.find('#spend_ruhm_button').click(ev => {
+      this.actor.system.attributes.ruhm.value = parseInt(this.actor.system.attributes.ruhm.value) - 1;
+      if(parseInt(this.actor.system.attributes.ruhm.value) < 0){
+        this.actor.system.attributes.ruhm.value = 0;
+      }
+      this.render(true);
+    });
 
     // Render the item sheet for viewing/editing prior to the editable check.
     html.find('.item-edit').click(ev => {
